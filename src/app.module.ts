@@ -7,12 +7,20 @@ import { MongooseModule } from "@nestjs/mongoose";
 import { ConfigModule } from '@nestjs/config';
 import { AnalyticsModule } from './analytics/analytics.module';
 import { PassportModule } from '@nestjs/passport';
+import { ConfigService } from '@nestjs/config';
+
 
 @Module({
   imports: [
     PassportModule,
     ConfigModule.forRoot(),
-    MongooseModule.forRoot('mongodb://localhost:27017/affiliate'),
+    MongooseModule.forRootAsync({
+      imports: [ConfigModule],
+      useFactory: async (configService: ConfigService) => ({
+        uri: configService.get('DATABASE_URL'),
+      }),
+      inject: [ConfigService],
+    }),
     AuthModule,
     AnalyticsModule,
     BookModule
