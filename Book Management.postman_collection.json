@@ -38,10 +38,30 @@
 		{
 			"name": "Login",
 			"request": {
-				"method": "GET",
-				"header": [],
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"testuser@g.com\",\n    \"password\": \"123456\"\n}"
+				},
 				"url": {
-					"raw": ""
+					"raw": "http://books-management-sonsor.herokuapp.com/user/login",
+					"protocol": "http",
+					"host": [
+						"books-management-sonsor",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"user",
+						"login"
+					]
 				}
 			},
 			"response": []
@@ -49,10 +69,39 @@
 		{
 			"name": "Create Book",
 			"request": {
-				"method": "GET",
-				"header": [],
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJ0ZXN0dXNlciIsImVtYWlsIjoidGVzdHVzZXJAZy5jb20iLCJ1c2VySWQiOiI1ZjBmZGE5YjFhNmE4OTAwMTc3NjI1YjAiLCJpYXQiOjE1OTQ4NzQ3MTMsImV4cCI6MTU5NDkxNzkxM30.AVpJzC4FQHyGU836_SYBZ4zyCa2qdbxIpyDhTRBMRM4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"test book 1\",\n    \"author\": \"test author 1\",\n    \"isPrivate\": true\n}"
+				},
 				"url": {
-					"raw": ""
+					"raw": "http://books-management-sonsor.herokuapp.com/book",
+					"protocol": "http",
+					"host": [
+						"books-management-sonsor",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"book"
+					]
 				}
 			},
 			"response": []
@@ -60,10 +109,36 @@
 		{
 			"name": "Fetch Private Books",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJ0ZXN0dXNlciIsImVtYWlsIjoidGVzdHVzZXJAZy5jb20iLCJ1c2VySWQiOiI1ZjBmZGE5YjFhNmE4OTAwMTc3NjI1YjAiLCJpYXQiOjE1OTQ4NzQ3MTMsImV4cCI6MTU5NDkxNzkxM30.AVpJzC4FQHyGU836_SYBZ4zyCa2qdbxIpyDhTRBMRM4",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
 				"url": {
-					"raw": ""
+					"raw": "http://books-management-sonsor.herokuapp.com/book/private",
+					"protocol": "http",
+					"host": [
+						"books-management-sonsor",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"book",
+						"private"
+					]
 				}
 			},
 			"response": []
@@ -72,9 +147,25 @@
 			"name": "Fetch Public Books",
 			"request": {
 				"method": "GET",
-				"header": [],
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
 				"url": {
-					"raw": ""
+					"raw": "http://books-management-sonsor.herokuapp.com/book/public",
+					"protocol": "http",
+					"host": [
+						"books-management-sonsor",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"book",
+						"public"
+					]
 				}
 			},
 			"response": []
