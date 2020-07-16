@@ -18,6 +18,7 @@ export class BookController {
     ) {
     }
 
+    @Post()
     async create(@Body() createBookDto: CreateBookDto, @Req() req: any) {
         return await this.bookService.create(createBookDto);
     }
