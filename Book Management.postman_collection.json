@@ -1,0 +1,94 @@
+{
+	"info": {
+		"_postman_id": "1256e103-fefd-4859-97bc-2a8075e0c9bd",
+		"name": "Book Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"testuser\",\n    \"lastnmae\": \"testuser\",\n    \"email\": \"testuser@g.com\",\n    \"password\": \"123456\"\n}"
+				},
+				"url": {
+					"raw": "http://books-management-sonsor.herokuapp.com/user",
+					"protocol": "http",
+					"host": [
+						"books-management-sonsor",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Book",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch Private Books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch Public Books",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "xzcvcxzv",
+				"type": "string"
+			}
+		]
+	},
+	"protocolProfileBehavior": {}
+}
