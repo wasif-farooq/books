@@ -10,10 +10,9 @@ async function bootstrap() {
   app.enableCors();
 
   const options = new DocumentBuilder()
-      .setTitle('Cats example')
-      .setDescription('The cats API description')
+      .setTitle('Book Management')
+      .setDescription('The Api documentation for books')
       .setVersion('1.0')
-      .addTag('cats')
       .build();
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('docs', app, document);
